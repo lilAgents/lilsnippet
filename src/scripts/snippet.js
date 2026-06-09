@@ -24,7 +24,7 @@ function initTheme() {
   btn.addEventListener('click', () => {
     const next = current() === 'dark' ? 'light' : 'dark';
     document.documentElement.dataset.theme = next;
-    try { localStorage.setItem('lilsnippet-theme', next); } catch (e) {}
+    try { localStorage.setItem('lilsnippet-theme', next); } catch (e) { /* storage may be unavailable; safe to ignore */ }
     setThemeIcon(btn, next);
   });
 }
